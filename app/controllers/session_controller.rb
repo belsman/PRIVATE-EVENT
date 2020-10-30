@@ -1,10 +1,12 @@
 class SessionController < ApplicationController
+  include SessionHelper
+
   def new
     @user = User.new
   end
   
   def create
-    @user = User.find(params[:name])
+    @user = User.where(name: session_params[:name])
     if @user
       session[:user_id] = @user.id
       flash = "Sign in successfull"

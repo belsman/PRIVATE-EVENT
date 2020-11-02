@@ -25,7 +25,8 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @user = User.find(session[:user_id])
+    @event = @user.created_events.build(event_params)
 
     respond_to do |format|
       if @event.save

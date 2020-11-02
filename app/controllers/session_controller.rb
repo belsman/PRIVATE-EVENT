@@ -6,11 +6,11 @@ class SessionController < ApplicationController
   end
   
   def create
-    @user = User.where(name: session_params[:name])
+    @user = User.where(name: session_params[:name]).first
     if @user
       session[:user_id] = @user.id
-     # flash = "Sign in successfull"
-      redirect_to (@user)
+      flash = "Sign in successfull"
+      redirect_to new_event_path
       #  
     else
       flash.now = "Sign in failed"

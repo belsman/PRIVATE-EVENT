@@ -7,7 +7,7 @@
 <p><%= @event.description %></p>
 
 <ul>
-  <% @event.attendees.each |attendee| do%>
+  <% @event.attendees.each do |attendee| %>
     <li> <%= attendee.name %> </li>  
   <% end %>
 </ul>

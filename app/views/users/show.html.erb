@@ -1,4 +1,6 @@
 <h2>Welcome <%= @user.name %>, signed in successful</h2>
-<% @user_attended_events.each do |event|%>
-  <%event.name%>
-<% end %>
+<ul>
+  <% @user.attended_events.each do |event|%>
+    <li><%= event.name %></li>
+  <% end %>
+</ul>

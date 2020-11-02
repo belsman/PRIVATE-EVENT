@@ -1,6 +1,23 @@
 <h2>Welcome <%= @user.name %>, signed in successful</h2>
-<ul>
-  <% @user.attended_events.each do |event|%>
-    <li><%= event.name %></li>
-  <% end %>
-</ul>
+
+<div class="past-events">
+  <h3>Past Events</h3>
+  <ul>
+    <% @attended_events.each do |event|%>
+      <% if event.starts_at <= Time.now %>
+        <li><%= event.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div class="future_event">
+  <h3>Future Events</h3>
+  <ul>
+    <% @attended_events.each do |event|%>
+      <% if event.starts_at > Time.now %>
+        <li><%= event.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

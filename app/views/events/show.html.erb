@@ -6,8 +6,24 @@
 
 <p><%= @event.description %></p>
 
+<%= form_with(:url => user_invitation_index_path) do |f| %>
+  <%= f.hidden_field :id, value: @event.id %>  
+  <%= f.submit "Attend this Event" %>
+<% end %>
+<br />
+
 <ul>
   <% @event.attendees.each do |attendee| %>
     <li> <%= attendee.name %> </li>  
   <% end %>
 </ul>
+
+
+<%= form_with(:url => user_invitation_index_path) do |f| %>
+  <%= f.hidden_field :id, value: @event.id %>
+  <%=f.label :username%>
+  <%=f.text_field :name%>
+  <%= f.submit "Invite User" %>
+<% end %>
+
+

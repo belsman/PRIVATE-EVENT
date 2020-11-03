@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to 'Home', user_path(get_user_id) %></li>
+        <li><%= link_to 'Create Event', new_event_path %></li>
+        <% if get_user_id %>
+          <li><%= link_to 'Logout', new_session_path %></li>
+        <% else %>
+          <li><%= link_to 'Login', new_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -4,6 +4,6 @@ module EventsHelper
     end
 
     def event_params
-        params.require(:event).permit(:name, :description)
+        params.require(:event).permit(:name, :description, :starts_at)
     end
 end

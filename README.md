@@ -1,5 +1,5 @@
-# Project :  Members Only!
-In this project we practiced the authentication and authorization in rails using "devise" gem. In this project, only signed in users can see the author of each post.
+# Project :  Private events!
+In this project we've built a website which allows users to create events and also manage user signups. Users can create events and send invitations to other users. The purpose of this project was to attain a better grasp on the concepts of association with models. 
 
 ## Build-With
 
@@ -19,13 +19,13 @@ To get this project up and running locally, you must already have ruby and neces
 - Start by cloning this repository to your local machine :
 
 ```bash
-git clone https://github.com/Abhigyan001/members-only/tree/feature
+git clone https://github.com/belsman/PRIVATE-EVENT/tree/feature
 ```
 
 - Access the cloned repoository :
 
 ```bash
-cd members-only
+cd PRIVATE-EVENT
 ```
 
 - Run this command to install the needed gems :
@@ -72,7 +72,7 @@ rails server
 
 ## Show your support
 
-Give ⭐ Star me on GitHub — it helps!
+Give ⭐ Star on GitHub — it helps!
 
 ## 📝 License
 

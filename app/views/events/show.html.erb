@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @event.creator.name %></h3>
-
 <h4><%= @event.name %></h4>
-
+created by:
+<h3><%= @event.creator.name %></h3>
 <p><%= @event.description %></p>
 
 <%= form_with(:url => attend_event_index_path) do |f| %>
@@ -12,6 +11,7 @@
 <% end %>
 <br />
 
+<h4>People attending this event</h4>
 <ul>
   <% @event.attendees.each do |attendee| %>
     <li><%= attendee.name %></li>  

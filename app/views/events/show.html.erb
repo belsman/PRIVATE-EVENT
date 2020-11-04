@@ -5,10 +5,13 @@ created by:
 <h3><%= @event.creator.name %></h3>
 <p><%= @event.description %></p>
 
-<%= form_with(:url => attend_event_index_path) do |f| %>
-  <%= f.hidden_field :event_id, value: @event.id %>  
-  <%= f.submit "Attend this Event" %>
+<% if get_user_id %>
+  <%= form_with(:url => attend_event_index_path) do |f| %>
+    <%= f.hidden_field :event_id, value: @event.id %>  
+    <%= f.submit "Attend this Event" %>
+  <% end %>
 <% end %>
+
 <br />
 
 <h4>People attending this event</h4>
@@ -18,12 +21,11 @@ created by:
   <% end %>
 </ul>
 
-
-<%= form_with(:url => user_invitation_index_path) do |f| %>
-  <%= f.hidden_field :event_id, value: @event.id %>
-  <%=f.label :username%>
-  <%=f.text_field :name%>
-  <%= f.submit "Invite User" %>
+<% if get_user_id %>
+    <%= form_with(:url => user_invitation_index_path) do |f| %>
+    <%= f.hidden_field :event_id, value: @event.id %>
+    <%=f.label :username%>
+    <%=f.text_field :name%>
+    <%= f.submit "Invite User" %>
+  <% end %>
 <% end %>
-
-

@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "UserInvitations", type: :request do
-
+RSpec.describe 'UserInvitations', type: :request do
 end

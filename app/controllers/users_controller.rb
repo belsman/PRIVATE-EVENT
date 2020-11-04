@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include UserHelper
-  
+
   def new
     @user = User.new
   end
@@ -22,6 +22,4 @@ class UsersController < ApplicationController
     @past_events = @user.attended_events.past_events
     @future_events = @user.attended_events.future_events
   end
-
-
 end

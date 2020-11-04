@@ -6,11 +6,12 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-
+    - "Gemfile"
+    - "tmp/**/*" 
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Enabled: false
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
@@ -58,4 +59,8 @@ Style/HashEachMethods:
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
+  Enabled: false
+Naming/AccessorMethodName:
+  Enabled: false
+Lint/UselessAssignment:
   Enabled: false

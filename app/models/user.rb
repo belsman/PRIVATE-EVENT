@@ -3,4 +3,6 @@ class User < ApplicationRecord
   has_many :event_attendees, foreign_key: :attendee_id
   has_many :attended_events, through: :event_attendees, class_name: "Event"
 
+  validates :name, presence: true, length: { minimum: 2 }
+
 end

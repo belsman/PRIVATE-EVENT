@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :session, only: [:new, :create]
-  resources :user_invitation, only: [:create] 
+  resources :user_invitation, only: [:create]
+  resources :attend_event, only: [:create]  
 
 end

@@ -6,7 +6,7 @@
 
 <p><%= @event.description %></p>
 
-<%= form_with(:url => user_invitation_index_path) do |f| %>
+<%= form_with(:url => attend_event_index_path) do |f| %>
   <%= f.hidden_field :event_id, value: @event.id %>  
   <%= f.submit "Attend this Event" %>
 <% end %>

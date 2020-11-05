@@ -9,10 +9,10 @@ class SessionController < ApplicationController
     @user = User.where(name: session_params[:name]).first
     if @user
       session[:user_id] = @user.id
-      flash = 'Sign in successfull'
+      flash[:notice] = 'Sign in successfull'
       redirect_to new_event_path
     else
-      flash.now = 'Sign in failed'
+      flash.now[:notice] = 'Sign in failed'
       render :new
     end
   end

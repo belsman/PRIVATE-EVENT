@@ -1,0 +1,15 @@
+<%= form_for(@user, :url => session_index_path) do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+  </ul>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, required: true %>
+  </p>
+  
+  <p>
+    <%= f.submit "Login" %>
+  </p>
+<% end %>

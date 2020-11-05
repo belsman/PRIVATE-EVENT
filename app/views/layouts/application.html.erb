@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <nav>
+      <ul> 
+        
+        <% if get_user_id %>
+          <li><%= link_to 'Home', user_path(get_user_id) %></li>
+          <li><%= link_to 'Create Event', new_event_path %></li>
+          <li><%= link_to 'Logout', session_path(get_user_id), :method => "delete" %></li>
+        <% else %>
+          <li><%= link_to 'Login', new_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_path %></li>
+        <% end %>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

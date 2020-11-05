@@ -1,0 +1,27 @@
+<h2>Welcome <%= @user.name %></h2>
+
+<div class="created_events">
+    <h3>Past Events you created</h3>
+    <ul>
+      <%= render partial: "event", collection: @user_past_events %> 
+    </ul>
+    
+    <h3>Upcoming Events you created</h3>
+    <ul>
+      <%= render partial: "event", collection: @user_future_events %> 
+    </ul>
+</div>
+
+<div class="past-events">
+  <h3>Past Events</h3>
+  <ul>
+    <%= render partial: "event", collection: @past_events %> 
+  </ul>
+</div>
+
+<div class="future_event">
+  <h3>Future Events</h3>
+  <ul>
+    <%= render partial: "event", collection: @future_events %>      
+  </ul>
+</div>
